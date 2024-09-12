@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77); /* Blue-dark gradient background */
+    color: #eee;
+    min-height: 100vh; /* Ensures the body takes the full height */
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark semi-transparent overlay */
+    color: #eee;
+    margin-bottom: 30px; /* Add space between header and main content */
+    border-bottom: 2px solid #4A90E2; /* Optional: adds a border for separation */
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4A90E2;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4A90E2;
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #b0c7d8; /* Lighter color for contrast */
+}
+
+.contact-buttons {
+    margin: 20px 0;
+}
+
+.contact-buttons .btn {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-buttons .btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+.services {
+    padding: 50px;
+    background-color: rgba(30, 30, 30, 0.9); /* Same semi-transparent effect as header */
+    color: #eee;
+    border-radius: 10px; /* Slightly rounded corners */
+    margin: 20px auto;
+    max-width: 1200px; /* Limits the width of the services section */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4A90E2;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    width: 250px;
+    background-color: #333;
+    border: 1px solid #4A90E2;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.project-card p {
+    padding: 15px;
+    font-size: 1.1em;
+    color: #eee;
+}
+

@@ -1,0 +1,67 @@
+---
+enum Type {
+    linkedIn = 'LinkedIn',
+    gitHub = 'GitHub',
+    email = 'Email',
+    cv = 'CV',
+    telegram = 'Telegram',
+}
+
+const socials = [
+    {
+        name: Type.gitHub,
+        url: 'https://github.com/idolopafersa',
+        icon: 'assets/svg/icons/github.svg',
+        color: 'bg-cyan-500',
+    },
+    {
+        name: Type.email,
+        url: 'pafersa2003@gmail.com',
+        icon: 'assets/svg/icons/email.svg',
+        color: 'bg-lime-400',
+    },
+    {
+        name: Type.linkedIn,
+        url: 'https://www.linkedin.com/in/pablo-fernandez-1b4618257/',
+        icon: 'assets/svg/icons/linkedin.svg',
+        color: 'bg-sky-700',
+    },
+    {
+        name: Type.cv,
+        url: 'public/Resume.pdf', 
+        icon: 'assets/svg/icons/cv.svg', // Ensure you have this icon in your assets
+        color: 'bg-red-500',
+    },
+    {
+        name: Type.telegram,
+        url: 'https://t.me/idolopafersa', // Replace with your Telegram URL
+        icon: 'assets/svg/icons/telegram.svg', // Ensure you have this icon in your assets
+        color: 'bg-blue-500',
+    },
+];
+
+const getColor = (type: Type) => socials.find((social) => social.name === type)?.color;
+const getClass = (type: Type) =>
+    `scale-100 rounded-full border-2 border-gray-950 ${getColor(
+        type,
+    )} transition duration-300 hover:scale-110 animate-zoom-in`;
+---
+
+<div class="grid grid-cols-3 gap-3 duration-500 md:grid-flow-col md:gap-2">
+    {
+        socials.map((social) => {
+            const href = social.name === Type.email ? `mailto:${social.url}` : social.url;
+            return (
+                <a
+                    aria-label={social.name}
+                    class={getClass(social.name)}
+                    href={href}
+                    target="_blank"
+                    rel="nofollow noopner"
+                >
+                    <img class="size-14 p-3 md:size-16" src={social.icon} alt={social.name} />
+                </a>
+            );
+        })
+    }
+</div>
